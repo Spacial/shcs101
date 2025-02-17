@@ -4,13 +4,13 @@
 # -fno-stack-protector :
 # -no-pie :
 # -z execstack : 
-# -Wl
-# -z,norelro
-# -fno-builtin
-# -std=c99
-# -Wno-deprecated-declarations
-# -U_FORTIFY_SOURCE
-# -D_FORTIFY_SOURCE=0
+# -Wl:
+# -z,norelro:
+# -fno-builtin:
+# -std=c99:
+# -Wno-deprecated-declarations:
+# -U_FORTIFY_SOURCE:
+# -D_FORTIFY_SOURCE=0:
 #  
 
 CC = gcc
@@ -18,9 +18,10 @@ CFLAGS = -g -fno-stack-protector -no-pie -z execstack -Wl,-z,norelro -U_FORTIFY_
 LDFLAGS = 
 
 ## change for your code name
-SRC = buffer.c
+ORIGIN = 0x03_overflow
+SRC = $(ORIGIN).c
 OBJ = $(SRC:.c=.o)
-BIN = buffer
+BIN = $(ORIGIN)
 
 all: $(BIN)
 
