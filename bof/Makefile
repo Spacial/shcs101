@@ -18,7 +18,7 @@ CFLAGS = -g -fno-stack-protector -no-pie -z execstack -Wl,-z,norelro -U_FORTIFY_
 LDFLAGS = 
 
 ## change for your code name
-ORIGIN = 0x03_overflow
+ORIGIN = 0x09_buffer
 SRC = $(ORIGIN).c
 OBJ = $(SRC:.c=.o)
 BIN = $(ORIGIN)
