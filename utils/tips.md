@@ -12,6 +12,10 @@
    $ sudo chown root victim
    $ sudo chmod +x victim
   ```
+- disabling ASLR for educational pourposes:
+  ```
+  $ sudo systclt -w kernel.randomize_va_space=0
+  ```  
 
 ## GDB
 
